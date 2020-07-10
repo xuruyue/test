@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul>li{
+            list-style: none;
+        }
+        ul{
+            width: 400px;
+            height: 180px;
+            border: 10px solid pink;
+            margin: 50px auto;
+            display: flex;
+        }
+        ul>li{
+            width: 100px;
+            height: 100%;
+            overflow: hidden;
+        }
+        ul>li>img{
+            width: 289px;
+            height: 180px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="./images/1.png" alt=""></li>
+            <li><img src="./images/2.png" alt=""></li>
+            <li><img src="./images/3.png" alt=""></li>
+            <li><img src="./images/1.png" alt=""></li>
+        </ul>
+    </div>
+    <script src="./jquery/jquery.min.js"></script>
+    <script>
+        $('ul>li')
+        .mouseover(function(){
+            $(this)
+            .stop()
+            .animate({width:289},200)
+            .siblings()
+            .stop()
+            .animate({width:37},200)
+        })
+        $('ul').mouseleave(function(){
+            $('ul>li')
+            .stop()
+            .animate({width: 100},200)
+        })
+    </script>
+</body>
+</html>
